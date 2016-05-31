@@ -7,9 +7,12 @@
 * JDK-1.8
 * Tomcat-8.0
 * Eclipse
+
 # 系统框架
 ![image](https://github.com/acumen1005/Recommendation/blob/master/systemImage.png)
+
 # 推荐算法伪代码
+
 for（用户 u 尚未表达偏好的）每个物品i    
    for（用户 u 表达的偏好）每个物品j            
      计算 i 和 j 之间的相似度s           
