@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图书推荐系统</title>
+<script src="./index.js"></script>
+<link rel="stylesheet" href="./index.css">
+<!-- <script src="./scrollUpToDown.js"></script> -->
+<script src="./jquery-2.1.4.js"></script>
+</head>
+<body onload="ajaxToGetUser()">
+	<div id="zh">
+		<input id="uid" type="text" placeholder="请输入您的学号">
+		<input id="btn" type="button" value="查看" onclick="ajaxToGetData(),ajaxToGetReader()">
+	</div>
+	<div id="breakNews">
+		<div class="one">
+			<ul id="breakNewsList1" class="list6">
+	         <!--   
+	         	<li><a href="#" target="_blank">挪威的森林（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雨（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">放风筝的孩子（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">稻草人（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">谁偷了我的奶酪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">被偷走的十七年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">十六年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">you always talk so smooth（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I try to think（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">wanna be wanna be wanna（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I never heard before（豆瓣）</a></li>
+	            -->
+	        </ul>
+<!-- 	        <div class="hit">
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="pre1" alt="△"/></a></span>
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="next1" alt="▽"/></a></span>
+   		</div> -->
+        </div>
+		<div class="three">
+			<ul id="breakNewsList3" class="list6">
+			<!-- 
+	            <li><a href="#" target="_blank">挪威的森林（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雨（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">放风筝的孩子（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">稻草人（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">谁偷了我的奶酪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">被偷走的十七年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">十六年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">you always talk so smooth（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I try to think（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">wanna be wanna be wanna（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I never heard before（豆瓣）</a></li>
+	        -->
+	        </ul>
+<!-- 	        <div class="hit">
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="pre3" alt="△"/></a></span>
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="next3" alt="▽"/></a></span>
+			</div> -->
+		</div>
+		<div class="four">
+			<ul id="breakNewsList4" class="list6">
+	           <!--
+	            <li><a href="#" target="_blank">挪威的森林（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">雨（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">放风筝的孩子（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">稻草人（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">谁偷了我的奶酪（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">被偷走的十七年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">十六年（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">you always talk so smooth（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I try to think（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">wanna be wanna be wanna（豆瓣）</a></li>
+	            <li><a href="#" target="_blank">I never heard before（豆瓣）</a></li>
+	        -->
+	        </ul>
+	    <!--     <div class="hit">
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="pre4" alt="△"/></a></span>
+	        <span><a style="cursor: pointer;"><img width="auto" height="10" id="next4" alt="▽"/></a></span>
+			</div> -->
+		</div>
+	</div>
+	<div class="show" id="read"></div>
+	<div class="show" id="recommend"></div>
+
+	<script language="javascript" type="text/javascript">
+		$(function(){
+			$("body").css("height",$(window).height()+"px");
+		})
+		// var scroll1 = new ScrollText("breakNewsList1","pre1","next1",true,70,true);
+		// scroll1.LineHeight = 24;
+		// var scroll2 = new ScrollText("breakNewsList2","pre2","next2",true,70,true);
+		// scroll2.LineHeight = 24;
+		// var scroll3 = new ScrollText("breakNewsList3","pre3","next3",true,70,true);
+		// scroll3.LineHeight = 24;
+		// var scroll4 = new ScrollText("breakNewsList4","pre4","next4",true,70,true);
+		// scroll4.LineHeight = 24;
+	</script>
+</body>
+</html>

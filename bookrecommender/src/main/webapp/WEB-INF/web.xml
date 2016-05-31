@@ -1,0 +1,28 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>BookResultServlet</servlet-name>
+  	<display-name>BookResultServlet</display-name>
+  	<description></description>
+  	<servlet-class>bookrecommender.controller.BookResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TaskTimerServlet</servlet-name>
+  	<display-name>TaskTimerServlet</display-name>
+  	<description></description>
+  	<servlet-class>bookrecommender.controller.TaskTimerServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BookResultServlet</servlet-name>
+  	<url-pattern>/BookResultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TaskTimerServlet</servlet-name>
+  	<url-pattern>/TaskTimerServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
